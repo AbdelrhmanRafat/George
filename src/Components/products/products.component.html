@@ -1,1 +1,23 @@
-<p>products works!</p>
+<div class="container mx-auto px-4 pt-6 pb-10">
+    <!-- Header Title -->
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-bold text-gray-800 mb-2">Our Products</h2>
+      <p class="text-gray-500">Browse through our latest collection</p>
+    </div>
+  
+    <!-- Products Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      @for (product of products; track product._id) {
+        <div class="product-card-wrapper h-full min-h-[400px]">
+          <app-product-card [product]="product" class="h-full"></app-product-card>
+        </div>
+      }
+      @empty {
+        <div class="col-span-full flex flex-col items-center justify-center text-center py-20">
+          <img src="assets/images/Logo.svg" class="w-32 h-32 mb-6 opacity-50" alt="Logo" />
+          <h3 class="text-xl font-semibold text-gray-600">No products available</h3>
+          <p class="text-gray-400 mt-2">Please check back later.</p>
+        </div>
+      }
+    </div>
+  </div>  
