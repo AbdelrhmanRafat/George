@@ -12,17 +12,19 @@ const indexHtml = join(serverDistFolder, 'index.server.html');
 const app = express();
 const commonEngine = new CommonEngine();
 
-/**
- * Example Express Rest API endpoints can be defined here.
- * Uncomment and define endpoints as necessary.
- *
- * Example:
- * ```ts
- * app.get('/api/**', (req, res) => {
- *   // Handle API request
- * });
- * ```
- */
+// Enable JSON parsing for API requests
+app.use(express.json());
+
+// API Routes
+app.get('/api/v1/products', (req, res) => {
+  // Handle products API request
+  res.json({ message: 'Products API endpoint' });
+});
+
+app.get('/api/v1/products/:id', (req, res) => {
+  // Handle single product API request
+  res.json({ message: `Product ${req.params.id} API endpoint` });
+});
 
 /**
  * Serve static files from /browser

@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "node build-prod.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:DigtalCreativty": "node dist/digtal-creativty/server/server.mjs"
@@ -26,8 +27,6 @@
     "@tailwindcss/postcss": "^4.1.5",
     "express": "^4.18.2",
     "gsap": "^3.13.0",
-    "ngx-spinner": "^19.0.0",
-    "ngx-toastr": "^19.0.0",
     "postcss": "^8.5.3",
     "rxjs": "~7.8.0",
     "tailwindcss": "^4.1.5",
